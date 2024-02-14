@@ -19,19 +19,19 @@ export default function Example() {
         </p>
 
         <div className="flex px-2 pt-6">
-          <img className="h-9 w-9" src='src\assets\call.png' />
+        <i className="pt-3 fa-solid fa-phone fa-lg text-yellow-500"/>
           <p className="pl-5">
             91-1234567890
           </p>
         </div>
         <div className="flex px-2 pt-6">
-          <img className="h-9 w-9" src='src\assets\mail.png' />
+        <i className="pt-3 fa-solid fa-envelope fa-lg text-yellow-500"/>
           <p className="pl-5">
             ashkie@dragon.com
           </p>
         </div>
         <div className="flex px-2 pt-6">
-          <img className="h-9 w-9" src='src\assets\location.png' />
+        <i className="pt-3 fa-solid fa-location-dot fa-lg text-yellow-500"/>
           <p className="pl-5">
             108 Side Road, Center Area<br/>
             Gujarat, India<br/>

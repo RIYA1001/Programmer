@@ -16,3 +16,4 @@ pnpm install
 cd packages/vite
 pnpm run build
 pnpm link --global # use your preferred package manager for this step
+npm install --save react-stomp

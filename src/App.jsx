@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Test from './components/Test';
-import GameLabs from './components/GameLabs';
+import ErrorSolving from './components/ErrorSolving';
 import Videos from './pages/Videos';
 import Games from './pages/Games';
 import LiveLectures from './pages/LiveLectures';
@@ -29,7 +29,7 @@ function App() {
                     <Route path='/notes' element={<Notes/>} />
                     <Route path="/videos" element={<Videos/>} />
                     <Route path="/test" element={<Test/>} />
-                    <Route path="/gameLabs" element={<GameLabs/>} />
+                    <Route path="/errorSolving" element={<ErrorSolving/>} />
                 </Routes>
                 <Footer />
             </div>
