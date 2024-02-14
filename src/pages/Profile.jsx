@@ -99,8 +99,8 @@ export default function Example() {
         <h1 className="text-2xl font-bold text-yellow-500">Personal Information</h1>
         <p className="text-sm text-red-500">Use a permanent address where you can receive mail.</p>
 
-        <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8">
-          <div className="sm:col-span-3">
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-x-4 gap-y-8">
+          <div className="">
             <label htmlFor="first-name" className="block text-sm font-medium  text-gray-900">
               First name
             </label>
@@ -115,7 +115,7 @@ export default function Example() {
             </div>
           </div>
 
-          <div className="sm:col-span-3">
+          <div className="">
             <label htmlFor="last-name" className="block text-sm font-medium  text-gray-900">
               Last name
             </label>
@@ -130,7 +130,7 @@ export default function Example() {
             </div>
           </div>
 
-          <div className="sm:col-span-4">
+          <div className="">
             <label htmlFor="email" className="block text-sm font-medium  text-gray-900">
               Email address
             </label>
@@ -145,25 +145,30 @@ export default function Example() {
             </div>
           </div>
 
-          <div className="sm:col-span-3">
-            <label htmlFor="country" className="block text-sm font-medium  text-gray-900">
-              Country
+          <div className="">
+            <label htmlFor="region" className="block text-sm font-medium  text-gray-900">
+              Region
             </label>
             <div className="mt-2">
               <select
-                id="country"
-                name="country"
-                autoComplete="country-name"
+                id="region"
+                name="region"
+                autoComplete="region-name"
                 className="block bg-white w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm "
               >
-                <option>United States</option>
-                <option>Canada</option>
-                <option>Mexico</option>
+                <option>Asia</option>
+                <option>Africa</option>            
+                <option>Antarctica</option>
+                <option>Australia</option>
+                <option>North America</option>
+                <option>South America</option>
+                <option>Europe</option>
+
               </select>
             </div>
           </div>
 
-          <div className="col-span-full">
+          <div className="sm:col-span-2">
             <label htmlFor="street-address" className="block text-sm font-medium text-gray-900">
               Street address
             </label>
@@ -178,7 +183,7 @@ export default function Example() {
             </div>
           </div>
 
-          <div className="sm:col-span-2 sm:col-start-1">
+          <div className="">
             <label htmlFor="city" className="block text-sm font-medium  text-gray-900">
               City
             </label>
@@ -193,9 +198,9 @@ export default function Example() {
             </div>
           </div>
 
-          <div className="sm:col-span-2">
+          <div className="">
             <label htmlFor="region" className="block text-sm font-medium  text-gray-900">
-              State / Province
+              State / Province and Country
             </label>
             <div className="mt-2">
               <input
@@ -208,7 +213,7 @@ export default function Example() {
             </div>
           </div>
 
-          <div className="sm:col-span-2">
+          <div className="">
             <label htmlFor="postal-code" className="block text-sm font-medium  text-gray-900">
               ZIP / Postal code
             </label>

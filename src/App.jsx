@@ -1,10 +1,12 @@
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Videos from './components/Videos';
-import Games from './components/Games';
-import LiveLectures from './components/LiveLectures';
-import Notes from './components/Notes';
 import Footer from './components/Footer';
+import Test from './components/Test';
+import GameLabs from './components/GameLabs';
+import Videos from './pages/Videos';
+import Games from './pages/Games';
+import LiveLectures from './pages/LiveLectures';
+import Notes from './pages/Notes';
 import Home from './pages/Home';
 import Help from './pages/Help';
 import Chat from './pages/Chat';
@@ -26,6 +28,8 @@ function App() {
                     <Route path='/liveLectures' element={<LiveLectures/>} />
                     <Route path='/notes' element={<Notes/>} />
                     <Route path="/videos" element={<Videos/>} />
+                    <Route path="/test" element={<Test/>} />
+                    <Route path="/gameLabs" element={<GameLabs/>} />
                 </Routes>
                 <Footer />
             </div>
