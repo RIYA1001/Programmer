@@ -1,15 +1,21 @@
 import { createContext, useState } from "react";
 import PropTypes from "prop-types";
 
-export const ScoreContext = createContext(null);
+export const ScoreContext = createContext({
+  guessingEnabled: false,
+  updateGuessingEnabled: () => {}
+});
 
 const ScoreContextProvider = (props) => {
-  const { children } = props; // Destructure children from props
   const [guessingEnabled, setGuessingEnabled] = useState(false);
 
+  const updateGuessingEnabled = (enabled) => {
+    setGuessingEnabled(enabled);
+  };
+
   return (
-    <ScoreContext.Provider value={{ guessingEnabled, setGuessingEnabled }}>
-      {children} {/* Render the nested components */}
+    <ScoreContext.Provider value={{ guessingEnabled, updateGuessingEnabled }}>
+      {props.children}
     </ScoreContext.Provider>
   );
 };

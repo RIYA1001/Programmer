@@ -43,7 +43,7 @@ export default function Example() {
           name="password"
           type="password"
           autoComplete="current-password"
-          required
+          required="true"
           className="mt-2 mb-6 w-full bg-yellow-400 rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
         />
 

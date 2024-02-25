@@ -18,7 +18,7 @@ const Games = () => {
           <section className="my-3 mx-5 bg-yellow-400 text-gray-900 p-6 rounded-lg shadow-md">
             <h2 className="text-xl font-bold">Test</h2>
             <p className="my-4">Access educational test to aid your learning process.</p><br />
-            <Link to="/mcq" className="bg-gray-900 text-yellow-500 px-4 py-2 rounded hover:bg-green-600 hover:text-gray-900 mb-3">Proceed</Link>
+            <Link to="/test" className="bg-gray-900 text-yellow-500 px-4 py-2 rounded hover:bg-green-600 hover:text-gray-900 mb-3">Proceed</Link>
           </section>
 
           {/* Guessing Section */}

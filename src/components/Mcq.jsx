@@ -3,24 +3,29 @@ import { ScoreContext } from '../Context/ScoreContext';
 
 const questions = [
     {
-        question: 'What is Java?',
+        question: 'Q.1 What is Java?',
         options: ['A programming language', 'A fruit', 'A country', 'A car'],
         answer: 'A programming language'
     },
     {
-        question: '2 What is Java?',
-        options: ['A programming language', 'A fruit', 'A country', 'A car'],
-        answer: 'A programming language'
+        question: 'Q.2 What is the correct syntax to declare a variable in Java?',
+        options: ['variableName = value;', 'int variableName = value;', 'variableName := value;', 'declare variableName = value;'],
+        answer: 'int variableName = value;'
     },
     {
-        question: '3 What is Java?',
-        options: ['A programming language', 'A fruit', 'A country', 'A car'],
-        answer: 'A programming language'
+        question: 'Q.3 What is the correct way to create an object of a class in Java?',
+        options: ['MyClass.createObject();', 'new Object(MyClass);', 'new MyClass();', 'create Object(MyClass);'],
+        answer: 'new MyClass();'
     },
     {
-        question: '4 What is Java?',
-        options: ['A fruit', 'A country', 'A programming language', 'A car'],
-        answer: 'A programming language'
+        question: 'Q.4 What is the default value of an instance variable in Java?',
+        options: ['0', '1', 'null', 'Depends on the data type'],
+        answer: 'null'
+    },
+    {
+        question: 'Q.5 Which keyword is used to exit a loop in Java?',
+        options: ['break', 'exit', 'continue', 'stop'],
+        answer: 'break'
     },
     // Add more questions here...
 ];
@@ -41,14 +46,15 @@ function Mcq() {
         const newScore = calculateScore();
         setScore(newScore);
         setShowScore(true);
-    
+
         // Enable guessing section if score is 80 or above
         if (newScore >= 80) {
-          setGuessingEnabled(true);
+            setGuessingEnabled(true);
         } else {
-          setGuessingEnabled(false);
+            setGuessingEnabled(false);
         }
-      };
+        
+    };
 
     const calculateScore = () => {
         let correctAnswers = 0;
@@ -69,11 +75,12 @@ function Mcq() {
     };
 
     return (
-        <div className="text-center container mx-auto mt-28 mb-10 p-2">
-            <h1>Java Mcq Test</h1>
+        <div className="container mx-auto mt-28 mb-10 p-2">
+            <h1 className="text-center font-bold text-3xl">Java Mcq Test</h1>
             {questions.map((question, index) => (
-                <div key={index} className="mb-4">
+                <div key={index} className="bg-yellow-400 text-gray-900 my-6 p-6 rounded-lg shadow-md">
                     <h2>{question.question}</h2>
+                    <br/>
                     {question.options.map((option, optionIndex) => (
                         <div key={optionIndex} className="mb-2">
                             <input
@@ -89,10 +96,14 @@ function Mcq() {
                     ))}
                 </div>
             ))}
+
+
             <button onClick={handleSubmit} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                 Submit
             </button>
+            <br />
             {showScore && renderScore()}
+
         </div>
     );
 }
