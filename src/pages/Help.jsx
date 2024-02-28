@@ -9,7 +9,7 @@ export default function Example() {
   const [agreed, setAgreed] = useState(false)
 
   return (
-    <div className="center mx-auto mt-28 mb-12 grid grid-cols-1 sm:grid-cols-2 border-4 border-gray-900 rounded-2xl shadow-md size-10/12 md:size-9/12">
+    <div className="center mx-auto my-28 grid grid-cols-1 sm:grid-cols-2 border-4 border-gray-900 rounded-2xl shadow-md size-10/12 md:size-9/12">
 
       <div className="bg-gray-900 text-yellow-500 p-6">
 

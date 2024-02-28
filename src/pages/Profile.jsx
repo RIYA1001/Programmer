@@ -3,7 +3,7 @@ import { PhotoIcon, UserCircleIcon } from '@heroicons/react/24/solid'
 
 export default function Example() {
   return (
-    <form className="mx-auto mt-28 mb-12 p-8 border-4 border-gray-900 rounded-2xl shadow-md size-10/12 md:size-3/4">
+    <form className="mx-auto my-28 p-8 border-4 border-gray-900 rounded-2xl shadow-md size-10/12 md:size-3/4">
       <div className="space-y-4">
 
 

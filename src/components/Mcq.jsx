@@ -75,7 +75,7 @@ function Mcq() {
     };
 
     return (
-        <div className="container mx-auto mt-28 mb-10 p-2">
+        <div className="container mx-auto my-28 p-2">
             <h1 className="text-center font-bold text-3xl">Java Mcq Test</h1>
             {questions.map((question, index) => (
                 <div key={index} className="bg-yellow-400 text-gray-900 my-6 p-6 rounded-lg shadow-md">

@@ -21,7 +21,7 @@ const Videos = () => {
     };
 
     return (
-        <div className="text-center container mx-auto mt-40 mb-10 p-2">
+        <div className="text-center container mx-auto my-40 p-2">
             <div className="grid grid-cols-4">
                 <div className="col-span-1">
                     <h2 className="text-2xl font-bold mb-4">Videos</h2>

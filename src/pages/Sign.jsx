@@ -2,7 +2,7 @@
 export default function Example() {
   return (
 
-    <div className="mx-auto mt-28 mb-12 p-8 border-4 border-gray-900 rounded-2xl shadow-md size-3/4 md:size-2/4">
+    <div className="mx-auto my-28 p-8 border-4 border-gray-900 rounded-2xl shadow-md size-3/4 md:size-2/4">
 
       <img
         className="mx-auto h-20 w-auto"

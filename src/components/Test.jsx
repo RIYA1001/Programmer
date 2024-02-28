@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const Test = () => {
 
   return (
-    <div className="container mx-auto mt-40 mb-10 p-2">
+    <div className="container mx-auto my-40 p-2">
       <div className="grid grid-cols-2">
 
         <div className="flex flex-row">
@@ -21,9 +21,8 @@ const Test = () => {
       </div>
       <br />
       <br />
-      <br />
 
-      <div className="text-center grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 xl:grid-cols-7">
+      <div className="text-center grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-7 2xl:grid-cols-11">
 
         <Link to="/mcq" className="text-gray-900 font-bold m-4 rounded mb-3">
           <section className="bg-yellow-400 hover:bg-gray-900 hover:text-yellow-400 p-6 rounded-lg shadow-md">
