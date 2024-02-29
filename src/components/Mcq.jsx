@@ -1,5 +1,4 @@
-import { useState, useContext } from 'react';
-import { ScoreContext } from '../Context/ScoreContext';
+import { useState } from 'react';
 
 const questions = [
     {
@@ -34,7 +33,6 @@ function Mcq() {
     const [answers, setAnswers] = useState(new Array(questions.length).fill(''));
     const [score, setScore] = useState(0);
     const [showScore, setShowScore] = useState(false);
-    const { setGuessingEnabled } = useContext(ScoreContext);
 
     const handleOptionChange = (index, selectedOption) => {
         const newAnswers = [...answers];
@@ -49,9 +47,9 @@ function Mcq() {
 
         // Enable guessing section if score is 80 or above
         if (newScore >= 80) {
-            setGuessingEnabled(true);
+            window.location.replace("/slidepuzzle")
         } else {
-            setGuessingEnabled(false);
+            alert("better luck next time")
         }
         
     };

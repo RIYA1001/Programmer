@@ -3,11 +3,11 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, ChatBubbleLeftEllipsisIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
-    { name: 'Home', href: '/', current: false },
-    { name: 'LiveLectures', href: '/liveLectures', current: false },
-    { name: 'Videos', href: '/videos', current: false },
-    { name: 'Games', href: '/games', current: false },
-    { name: 'Notes', href: '/notes', current: false },
+    { name: 'Home', href: '/'},
+    { name: 'LiveLectures', href: '/liveLectures'},
+    { name: 'Videos', href: '/videos'},
+    { name: 'Games', href: '/games'},
+    { name: 'Notes', href: '/notes'},
 ]
 
 function classNames(...classes) {
