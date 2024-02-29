@@ -32,7 +32,6 @@ const questions = [
 function Mcq() {
     const [answers, setAnswers] = useState(new Array(questions.length).fill(''));
     const [score, setScore] = useState(0);
-    const [showScore, setShowScore] = useState(false);
 
     const handleOptionChange = (index, selectedOption) => {
         const newAnswers = [...answers];
@@ -43,15 +42,19 @@ function Mcq() {
     const handleSubmit = () => {
         const newScore = calculateScore();
         setScore(newScore);
-        setShowScore(true);
 
-        // Enable guessing section if score is 80 or above
         if (newScore >= 80) {
-            window.location.replace("/slidepuzzle")
+            const playGame = window.confirm(`Your score is ${newScore}% \nHurray! You unlocked the game. Would you like to play it?`);
+            if (playGame) {
+                window.location.replace("/slidepuzzle");
+            } else {
+                setAnswers(new Array(questions.length).fill(''));
+            }
         } else {
-            alert("better luck next time")
+            alert(`Your score is ${newScore}% \nBetter luck next time!`);
+            window.location.replace("/games");
         }
-        
+
     };
 
     const calculateScore = () => {
@@ -64,21 +67,13 @@ function Mcq() {
         return (correctAnswers / questions.length) * 100;
     };
 
-    const renderScore = () => {
-        return (
-            <div>
-                <h2>Your score: {score}%</h2>
-            </div>
-        );
-    };
-
     return (
         <div className="container mx-auto my-28 p-2">
             <h1 className="text-center font-bold text-3xl">Java Mcq Test</h1>
             {questions.map((question, index) => (
                 <div key={index} className="bg-yellow-400 text-gray-900 my-6 p-6 rounded-lg shadow-md">
                     <h2>{question.question}</h2>
-                    <br/>
+                    <br />
                     {question.options.map((option, optionIndex) => (
                         <div key={optionIndex} className="mb-2">
                             <input
@@ -99,8 +94,6 @@ function Mcq() {
             <button onClick={handleSubmit} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                 Submit
             </button>
-            <br />
-            {showScore && renderScore()}
 
         </div>
     );
