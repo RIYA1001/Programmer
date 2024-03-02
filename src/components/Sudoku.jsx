@@ -47,7 +47,7 @@ const Sudoku = () => {
     setPuzzle(newPuzzle);
   };
 
-  return <div className="grid my-20 center">{renderGrid()}</div>;
+  return <div className="grid my-28 mx-auto center p-2">{renderGrid()}</div>;
 };
 
 export default Sudoku;

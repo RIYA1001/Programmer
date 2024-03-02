@@ -11,7 +11,7 @@ export default function Example() {
   return (
     <div className="center mx-auto my-28 grid grid-cols-1 sm:grid-cols-2 border-4 border-gray-900 rounded-2xl shadow-md size-10/12 md:size-9/12">
 
-      <div className="bg-gray-900 text-yellow-500 p-6">
+      <div className="bg-gray-900 text-yellow-500 p-8">
 
         <h2 className="text-3xl font-bold sm:text-4xl">Contact Us</h2><br />
         <p className="pb-2">
@@ -44,28 +44,14 @@ export default function Example() {
 
       <form action="#" method="POST" className="size-auto p-6 text-yellow-500">
 
-        <label htmlFor="first-name" className="text-sm font-semibold">
-          First name
+        <label htmlFor="full-name" className="text-sm font-semibold">
+          Full Name
         </label>
         <input
           type="text"
-          name="first-name"
-          id="first-name"
+          name="full-name"
+          id="full-name"
           autoComplete="given-name"
-          required="true"
-          className="mt-2.5 placeholder-slate-80 bg-white w-full rounded-md px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm"
-        />
-        <br />
-        <br />
-
-        <label htmlFor="last-name" className="text-sm font-semibold">
-          Last name
-        </label>
-        <input
-          type="text"
-          name="last-name"
-          id="last-name"
-          autoComplete="family-name"
           required="true"
           className="mt-2.5 placeholder-slate-80 bg-white w-full rounded-md px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm"
         />

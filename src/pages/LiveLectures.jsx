@@ -1,317 +1,60 @@
 import { useState } from 'react';
 
 const LiveLectures = () => {
-    const [selectedCategory, setSelectedCategory] = useState('front-end');
-
-    const handleCategoryChange = (category) => {
-        setSelectedCategory(category);
+    const createMeeting = () => {
+        window.open('https://meet.google.com/new', '_blank');
     };
 
-    const handleFullScreen = (event) => {
-        const elem = event.target;
-        if (elem.requestFullscreen) {
-            elem.requestFullscreen();
-        } else if (elem.mozRequestFullScreen) { /* Firefox */
-            elem.mozRequestFullScreen();
-        } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
-            elem.webkitRequestFullscreen();
-        } else if (elem.msRequestFullscreen) { /* IE/Edge */
-            elem.msRequestFullscreen();
+    const [meetingId, setMeetingId] = useState('');
+
+    const handleInputChange = (event) => {
+        setMeetingId(event.target.value);
+    };
+
+    const joinMeeting = () => {
+        if (meetingId.trim() !== '') {
+            const trimmedId = meetingId.trim();
+            const meetingLink = `https://meet.google.com/${trimmedId}`;
+            window.open(meetingLink, '_blank');
         }
     };
 
     return (
-        <div className="text-center container mx-auto my-40 p-2">
-            <div className="grid grid-cols-4">
-                <div className="col-span-1">
-                    <h2 className="text-2xl font-bold mb-4">Live Lectures</h2>
-                </div>
-                <div className="col-span-3 flex bg-gray-300 rounded-3xl">
-                    <button
-                        className={`text-sm font-bold py-2 px-4 rounded-3xl ${selectedCategory === 'front-end' ? 'bg-yellow-400 text-gray-900' : ''}`}
-                        onClick={() => handleCategoryChange('front-end')}
-                    >
-                        Front-end Developer
-                    </button>
-                    <button
-                        className={`text-sm font-bold py-2 px-4 rounded-3xl ${selectedCategory === 'ui-designing' ? 'bg-yellow-400 text-gray-900' : ''}`}
-                        onClick={() => handleCategoryChange('ui-designing')}
-                    >
-                        UI Designing
-                    </button>
-                    <button
-                        className={`text-sm font-bold py-2 px-4 rounded-3xl ${selectedCategory === 'Java' ? 'bg-yellow-400 text-gray-900' : ''}`}
-                        onClick={() => handleCategoryChange('Java')}
-                    >
-                        Java Developer
-                    </button>
-                    <button
-                        className={`text-sm font-bold py-2 px-4 rounded-3xl ${selectedCategory === 'full-stack-development' ? 'bg-yellow-400 text-gray-900' : ''}`}
-                        onClick={() => handleCategoryChange('full-stack-development')}
-                    >
-                        Full Stack Development
-                    </button>
-                </div>
+
+        <div className="center mx-auto my-28 grid grid-cols-1 sm:grid-cols-2 border-4 border-gray-900 rounded-2xl shadow-md size-10/12 md:size-9/12">
+            
+            <div className="w-full h-full bg-gray-900">
+                <img
+                    className="w-full h-full object-cover rounded-2xl"
+                    src='src/assets/meeting.jfif'
+                    alt="Programmer icon"
+                />
             </div>
-            <br />
-            <br />
 
-            <div className="center mx-auto">
+            <div className="bg-gray-900 text-yellow-500 p-8">
 
-                {selectedCategory === 'front-end' && (
-                    <div className="center mx-auto grid xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6">
-                        <iframe
-                            width="350"
-                            height="200"
-                            src="https://www.youtube.com/embed/InvSEpJUXu4"
-                            title="YouTube Video"
-                            allowFullScreen
-                            onClick={handleFullScreen}
-                            className='place-self-center'
-                        ></iframe>
-
-                        <iframe
-                            width="350"
-                            height="200"
-                            src="https://www.youtube.com/embed/dgKSqz3it50"
-                            title="YouTube Video"
-                            allowFullScreen
-                            onClick={handleFullScreen}
-                            className='place-self-center'
-                        ></iframe>
-
-                        <iframe
-                            width="350"
-                            height="200"
-                            src="https://www.youtube.com/embed/wOnv-BMPv-w"
-                            title="YouTube Video"
-                            allowFullScreen
-                            onClick={handleFullScreen}
-                            className='place-self-center'
-                        ></iframe>
-                        <iframe
-                            width="350"
-                            height="200"
-                            src="https://www.youtube.com/embed/avKl2ykXCp4"
-                            title="YouTube Video"
-                            allowFullScreen
-                            onClick={handleFullScreen}
-                            className='place-self-center'
-                        ></iframe>
-                        <iframe
-                            width="350"
-                            height="200"
-                            src="https://www.youtube.com/embed/--XrIa-iey0"
-                            title="YouTube Video"
-                            allowFullScreen
-                            onClick={handleFullScreen}
-                            className='place-self-center'
-                        ></iframe>
-                       
-                        <iframe
-                            width="350"
-                            height="200"
-                            src="https://www.youtube.com/embed/nGhKIC_7Mkk"
-                            title="YouTube Video"
-                            allowFullScreen
-                            onClick={handleFullScreen}
-                            className='place-self-center'
-                        ></iframe>
-                    
-                    </div>
-                )}
-                {selectedCategory === 'ui-designing' && (
-                    <div className="center mx-auto grid xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6">
-
-                        <iframe
-                            width="350"
-                            height="200"
-                            src="https://www.youtube.com/embed/slentvTk3gY"
-                            title="YouTube Video"
-                            allowFullScreen
-                            onClick={handleFullScreen}
-                            className='place-self-center'
-                        ></iframe>
-                        <iframe
-                            width="350"
-                            height="200"
-                            src="https://www.youtube.com/embed/c1EW8Ucj6sQ"
-                            title="YouTube Video"
-                            allowFullScreen
-                            onClick={handleFullScreen}
-                            className='place-self-center'
-                        ></iframe>
-                        <iframe
-                            width="350"
-                            height="200"
-                            src="https://www.youtube.com/embed/Q9GUbJcszfk"
-                            title="YouTube Video"
-                            allowFullScreen
-                            onClick={handleFullScreen}
-                            className='place-self-center'
-                        ></iframe>
-                        
-                        <iframe
-                            width="350"
-                            height="200"
-                            src="https://www.youtube.com/embed/1h73MOcH3xA"
-                            title="YouTube Video"
-                            allowFullScreen
-                            onClick={handleFullScreen}
-                            className='place-self-center'
-                        ></iframe>
-                        <iframe
-                            width="350"
-                            height="200"
-                            src="https://www.youtube.com/embed/JGLfyTDgfDc"
-                            title="YouTube Video"
-                            allowFullScreen
-                            onClick={handleFullScreen}
-                            className='place-self-center'
-                        ></iframe>
-                        
-                        <iframe
-                            width="350"
-                            height="200"
-                            src="https://www.youtube.com/embed/M0JRk9LPOq4"
-                            title="YouTube Video"
-                            allowFullScreen
-                            onClick={handleFullScreen}
-                            className='place-self-center'
-                        ></iframe>
-
-                    </div>
-                )}
-                {selectedCategory === 'Java' && (
-                    <div className="center mx-auto grid xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6">
-
-                        <iframe
-                            width="350"
-                            height="200"
-                            src="https://www.youtube.com/embed/UmnCZ7-9yDY"
-                            title="YouTube Video"
-                            allowFullScreen
-                            onClick={handleFullScreen}
-                            className='place-self-center'
-                        ></iframe>
-
-                        <iframe
-                            width="350"
-                            height="200"
-                            src="https://www.youtube.com/embed/eIrMbAQSU34"
-                            title="YouTube Video"
-                            allowFullScreen
-                            onClick={handleFullScreen}
-                            className='place-self-center'
-                        ></iframe>
-                       
-                        <iframe
-                            width="350"
-                            height="200"
-                            src="https://www.youtube.com/embed/rV_3Lewxx6o"
-                            title="YouTube Video"
-                            allowFullScreen
-                            onClick={handleFullScreen}
-                            className='place-self-center'
-                        ></iframe>
-                        <iframe
-                            width="350"
-                            height="200"
-                            src="https://www.youtube.com/embed/bSrm9RXwBaI"
-                            title="YouTube Video"
-                            allowFullScreen
-                            onClick={handleFullScreen}
-                            className='place-self-center'
-                        ></iframe>
-                        <iframe
-                            width="350"
-                            height="200"
-                            src="https://www.youtube.com/embed/7nq_o2RE4V8"
-                            title="YouTube Video"
-                            allowFullScreen
-                            onClick={handleFullScreen}
-                            className='place-self-center'
-                        ></iframe>
-                       
-                        <iframe
-                            width="350"
-                            height="200"
-                            src="https://www.youtube.com/embed/GoXwIVyNvX0"
-                            title="YouTube Video"
-                            allowFullScreen
-                            onClick={handleFullScreen}
-                            className='place-self-center'
-                        ></iframe>
-                        
-                    </div>
-                )}
-                {selectedCategory === 'full-stack-development' && (
-                    <div className="center mx-auto grid xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6">
-
-                        <iframe
-                            width="350"
-                            height="200"
-                            src="https://www.youtube.com/embed/ANzPM5-lwXc"
-                            title="YouTube Video"
-                            allowFullScreen
-                            onClick={handleFullScreen}
-                            className='place-self-center'
-                        ></iframe>
-
-                        <iframe
-                            width="350"
-                            height="200"
-                            src="https://www.youtube.com/embed/avKl2ykXCp4"
-                            title="YouTube Video"
-                            allowFullScreen
-                            onClick={handleFullScreen}
-                            className='place-self-center'
-                        ></iframe>
-                       
-                        <iframe
-                            width="350"
-                            height="200"
-                            src="https://www.youtube.com/embed/nGhKIC_7Mkk"
-                            title="YouTube Video"
-                            allowFullScreen
-                            onClick={handleFullScreen}
-                            className='place-self-center'
-                        ></iframe>
-                        <iframe
-                            width="350"
-                            height="200"
-                            src="https://www.youtube.com/embed/CrSC1ZA9j0M"
-                            title="YouTube Video"
-                            allowFullScreen
-                            onClick={handleFullScreen}
-                            className='place-self-center'
-                        ></iframe>
-                        
-                        <iframe
-                            width="350"
-                            height="200"
-                            src="https://www.youtube.com/embed/InvSEpJUXu4"
-                            title="YouTube Video"
-                            allowFullScreen
-                            onClick={handleFullScreen}
-                            className='place-self-center'
-                        ></iframe>
-                        <iframe
-                            width="350"
-                            height="200"
-                            src="https://www.youtube.com/embed/-FldHnejaA4"
-                            title="YouTube Video"
-                            allowFullScreen
-                            onClick={handleFullScreen}
-                            className='place-self-center'
-                        ></iframe>
+                <h1 className="text-3xl font-bold mb-4">Live Lectures</h1>
+                <p className="text-lg mb-10">Join live programming lectures conducted by experts in the field.</p>
 
 
-                    </div>
-                )}
+                <button onClick={createMeeting} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    Create a Meeting
+                </button>
+
+                <div className="my-10 border-2 border-gray-300 p-6 rounded-2xl center">
+
+                    <input type="text" value={meetingId} onChange={handleInputChange} placeholder="Enter Meeting ID" className="border border-gray-300 rounded-md p-2 m-2" />
+                    <button onClick={joinMeeting} className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded m-2">
+                        Join Meeting
+                    </button>
+
+                </div>
+
             </div>
+
+
         </div>
-    )
+    );
 }
 
 export default LiveLectures;

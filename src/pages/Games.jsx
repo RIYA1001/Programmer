@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const Games = () => {
 
   return (
-    <div className="container mx-auto my-40 p-2">
+    <div className="container mx-auto my-28 p-2">
       <div className="grid grid-cols-2 mx-10">
 
         <div className="flex flex-row">

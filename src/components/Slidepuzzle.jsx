@@ -65,13 +65,16 @@ const Slidepuzzle = () => {
     ));
   };
 
-  return <div className="text-center my-28">
+  return (
 
-    <h1 className="text-3xl font-bold">Welcome to Slide Puzzle Game</h1>
-    <div className="puzzle my-10">
-      {renderTiles()}
+    <div className="text-center my-28 p-2">
+
+      <h1 className="text-3xl font-bold">Welcome to Slide Puzzle Game</h1>
+      <div className="puzzle my-10">
+        {renderTiles()}
+      </div>
     </div>
-  </div>
+  )
 };
 
 export default Slidepuzzle;
