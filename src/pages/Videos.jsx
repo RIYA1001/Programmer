@@ -28,25 +28,25 @@ const Videos = () => {
                 </div>
                 <div className="col-span-3 flex bg-gray-300 rounded-3xl">
                     <button
-                        className={`text-sm font-bold py-2 px-4 rounded-3xl ${selectedCategory === 'front-end' ? 'bg-yellow-400 text-gray-900' : ''}`}
+                        className={`text-xs lg:text-sm font-bold py-2 px-4 rounded-3xl ${selectedCategory === 'front-end' ? 'bg-yellow-400 text-gray-900' : ''}`}
                         onClick={() => handleCategoryChange('front-end')}
                     >
                         Front-end Developer
                     </button>
                     <button
-                        className={`text-sm font-bold py-2 px-4 rounded-3xl ${selectedCategory === 'ui-designing' ? 'bg-yellow-400 text-gray-900' : ''}`}
+                        className={`text-xs lg:text-sm font-bold py-2 px-4 rounded-3xl ${selectedCategory === 'ui-designing' ? 'bg-yellow-400 text-gray-900' : ''}`}
                         onClick={() => handleCategoryChange('ui-designing')}
                     >
                         UI Designing
                     </button>
                     <button
-                        className={`text-sm font-bold py-2 px-4 rounded-3xl ${selectedCategory === 'Java' ? 'bg-yellow-400 text-gray-900' : ''}`}
+                        className={`text-xs lg:text-sm font-bold py-2 px-4 rounded-3xl ${selectedCategory === 'Java' ? 'bg-yellow-400 text-gray-900' : ''}`}
                         onClick={() => handleCategoryChange('Java')}
                     >
                         Java Developer
                     </button>
                     <button
-                        className={`text-sm font-bold py-2 px-4 rounded-3xl ${selectedCategory === 'full-stack-development' ? 'bg-yellow-400 text-gray-900' : ''}`}
+                        className={`text-xs lg:text-sm font-bold py-2 px-4 rounded-3xl ${selectedCategory === 'full-stack-development' ? 'bg-yellow-400 text-gray-900' : ''}`}
                         onClick={() => handleCategoryChange('full-stack-development')}
                     >
                         Full Stack Development

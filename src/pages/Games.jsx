@@ -4,7 +4,7 @@ const Games = () => {
 
   return (
     <div className="container mx-auto my-40 p-2">
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-2 mx-10">
 
         <div className="flex flex-row">
           <h2 className="text-2xl font-bold">TOP Categories</h2>

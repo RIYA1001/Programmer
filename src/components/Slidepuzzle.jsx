@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './css/Slidepuzzle.css';
 
-const Guessing = () => {
+const Slidepuzzle = () => {
   const [tiles, setTiles] = useState([]);
   const size = 3;
 
@@ -46,10 +46,10 @@ const Guessing = () => {
   };
 
   const checkForWin = (currentTiles) => {
-    const isWin = currentTiles.every((value, index) => value === (index + 1) % (size * size)) && currentTiles[size * size - 1] === null;
+    const isWin = currentTiles.slice(0, currentTiles.length - 1).every((value, index) => value === index + 1) && currentTiles[currentTiles.length - 1] === null;
     if (isWin) {
-      alert('Congratulations! You solved the puzzle!');
       initializeTiles();
+      alert('Congratulations! You solved the puzzle!');
     }
   };
 
@@ -74,4 +74,4 @@ const Guessing = () => {
   </div>
 };
 
-export default Guessing;
+export default Slidepuzzle;

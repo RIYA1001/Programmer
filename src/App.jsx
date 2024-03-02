@@ -14,6 +14,8 @@ import Chat from './pages/Chat';
 import Profile from './pages/Profile';
 import Sign from './pages/Sign';
 
+import Login from './components/SignIn/Login';
+import Button from './components/SignIn/Button';
 
 function App() {
     return (
@@ -39,6 +41,8 @@ function App() {
                     <Route path="/slidepuzzle" element={<Slidepuzzle />} />
                     <Route path="/sudoku" element={<Sudoku />} />
 
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/button" element={<Button />} />
                     <Route path="*" element={<Navigate to="/" replace />} />
                 </Routes>
                 <Footer />
