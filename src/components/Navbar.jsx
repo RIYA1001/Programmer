@@ -64,7 +64,7 @@ export default function Example() {
                                     type="button"
                                     className="relative rounded-full bg-gray-800 p-2 text-yellow-400 hover:text-white"
                                 ><a
-                                    href="/chat"
+                                    href="/login"
                                 >
 
                                         <span className="absolute -inset-1.5" />

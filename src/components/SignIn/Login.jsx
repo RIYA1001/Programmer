@@ -1,80 +1,81 @@
+// Import the required Firebase functions
+import { initializeApp } from 'firebase/app';
+import { getAuth, onAuthStateChanged, GoogleAuthProvider, useDeviceLanguage, signOut as signOutAuth, signInWithPopup } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
+
 import { useState, useEffect } from 'react';
 import Button from './Button';
+import Chat from './Chat';
 
-import { initializeApp } from 'firebase/app';
-import { getAuth, onAuthStateChanged, GoogleAuthProvider, useDeviceLanguage } from 'firebase/auth';
-import 'firebase/firestore';
-
+// Initialize Firebase with your configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyAwlVxcoIJLuAX0VHAXMLJ4GHTUYUja4fY",
-    authDomain: "programmer-1218b.firebaseapp.com",
-    projectId: "programmer-1218b",
-    storageBucket: "programmer-1218b.appspot.com",
-    messagingSenderId: "1006788566648",
-    appId: "1:1006788566648:web:464a6d2df17971e5cf978d"
+  apiKey: "AIzaSyAwlVxcoIJLuAX0VHAXMLJ4GHTUYUja4fY",
+  authDomain: "programmer-1218b.firebaseapp.com",
+  projectId: "programmer-1218b",
+  storageBucket: "programmer-1218b.appspot.com",
+  messagingSenderId: "1006788566648",
+  appId: "1:1006788566648:web:464a6d2df17971e5cf978d"
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+const firebaseApp = initializeApp(firebaseConfig);
+
+// Get the authentication and Firestore instances
+const auth = getAuth(firebaseApp);
+const db = getFirestore(firebaseApp);
 
 function Login() {
+  const [user, setUser] = useState(() => auth.currentUser);
+  const [initializing, setInitializing] = useState(true);
 
-    const [user, setUser] = useState(() => auth.currentUser);
-    const [initializing, setInitializing] = useState(true);
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUser(user);
+      } else {
+        setUser(null);
+      }
 
-    useEffect(() => {
+      if (initializing) {
+        setInitializing(false);
+      }
+    });
 
-        const unsubscribe = onAuthStateChanged(auth, user => {
-            if (user) {
-                setUser(user);
-            } else {
-                setUser(null);
-            }
-            if (initializing) {
-                setInitializing(false);
-            }
-        });
+    return unsubscribe;
+  }, [initializing]);
 
-        return unsubscribe;
+  const signInWithGoogle = async () => {
+    const provider = new GoogleAuthProvider();
+    useDeviceLanguage(auth);
 
-    }, [auth, initializing]);
+    try {
+      await signInWithPopup(auth, provider);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
-    const signInWithGoogle = async () => {
+  const signOut = async () => {
+    try {
+      await signOutAuth(auth);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
 
-        const provider = new GoogleAuthProvider();
-        useDeviceLanguage();
-        try {
-            await auth.signInWithPopup(provider);
-        } catch (error) {
-            console.error(error);
-        }
-    };
+  if (initializing) return "Loading...";
 
-    const signOut = async () => {
-
-        try {
-            await auth.signOut();
-        } catch (error) {
-            console.log(error.message);
-        }
-
-    };
-
-    if (initializing) return "Loading...";
-
-    return (
-        <div className='m-20'>
-
-            {user ? (
-                <>
-                    <button onClick={signOut}>Sign out</button>
-                    <p>Welcome to the chat</p>
-                </>) : (<button onClick={signInWithGoogle}>Sign in with Google</button>)
-            }
-
-        </div>
-    );
+  return (
+    <div className="m-40">
+      {user ? (
+        <>
+          <Button onClick={signOut}>Sign out</Button>
+          <Chat user={user} db={db} />
+        </>
+      ) : (
+        <Button onClick={signInWithGoogle}>Sign in with Google</Button>
+      )}
+    </div>
+  );
 }
 
 export default Login;

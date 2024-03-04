@@ -16,7 +16,10 @@ const LiveLectures = () => {
             const trimmedId = meetingId.trim();
             const meetingLink = `https://meet.google.com/${trimmedId}`;
             window.open(meetingLink, '_blank');
+        }else {
+            alert('Please enter a valid link.');
         }
+
     };
 
     return (
@@ -38,7 +41,7 @@ const LiveLectures = () => {
 
 
                 <button onClick={createMeeting} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                    Create a Meeting
+                    Create a new Meeting
                 </button>
 
                 <div className="my-10 border-2 border-gray-300 p-6 rounded-2xl center">

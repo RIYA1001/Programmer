@@ -37,13 +37,6 @@ const Home = () => {
                     <Link to="/notes" className="hover:text-green-700 text-blue-600">Learn More</Link> <br /><br />
                 </section>
 
-                {/* Chat Section */}
-                <section className="my-3 mx-5 bg-yellow-400 text-gray-900 p-6 rounded-lg shadow-md">
-                    <h2 className="text-xl font-bold">Chat</h2>
-                    <p className="my-4">Access educational notes to aid your learning process.</p>
-                    <Link to="/login" className="hover:text-green-700 text-blue-600">Learn More</Link> <br /><br />
-                </section>
-
             </div>
 
         </div>

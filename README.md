@@ -30,9 +30,13 @@ Before running the "Programmer" platform, ensure you have the following installe
 3.3	Install dependencies using npm:
 
 - npm install
+- npm install react-router-dom@latest
 - npm install @headlessui/react @heroicons/react
 - npm install --save @fortawesome/fontawesome-free
 - npm install -D tailwindcss postcss autoprefixer
+- npm install date-fns
+- npm i --save firebase
+
 
 
 
