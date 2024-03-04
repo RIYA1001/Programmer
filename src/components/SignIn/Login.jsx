@@ -1,4 +1,3 @@
-// Import the required Firebase functions
 import { initializeApp } from 'firebase/app';
 import { getAuth, onAuthStateChanged, GoogleAuthProvider, useDeviceLanguage, signOut as signOutAuth, signInWithPopup } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
@@ -65,7 +64,7 @@ function Login() {
   if (initializing) return "Loading...";
 
   return (
-    <div className="m-40">
+    <div className="my-28 p-2">
       {user ? (
         <>
           <Button onClick={signOut}>Sign out</Button>
