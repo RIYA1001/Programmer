@@ -2,8 +2,10 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Slidepuzzle from "./components/Slidepuzzle";
-import Sudoku from "./components/Sudoku";
+
+import Games from "./components/Games/Games";
+import Slidepuzzle from "./components/Games/Slidepuzzle";
+import Sudoku from "./components/Games/Sudoku";
 
 import Videos from "./pages/Videos";
 import Mcq from "./pages/Mcq";
@@ -50,8 +52,8 @@ function App() {
 
           <Route path="/java" element={<Java />} />
           <Route path="/c" element={<C />} />
-          <Route path="/csharp" element={<Csharp />} />
-          <Route path="/cplusplus" element={<Cplusplus />} />
+          <Route path="/cSharp" element={<Csharp />} />
+          <Route path="/cPlusPlus" element={<Cplusplus />} />
           <Route path="/python" element={<Python />} />
           <Route path="/javascript" element={<JavaScript />} />
           <Route path="/html" element={<HTML />} />
@@ -63,6 +65,7 @@ function App() {
           <Route path="/kotlin" element={<Kotlin />} />
           <Route path="/swift" element={<Swift />} />
 
+          <Route path="/games" element={<Games />} />
           <Route path="/slidepuzzle" element={<Slidepuzzle />} />
           <Route path="/sudoku" element={<Sudoku />} />
 

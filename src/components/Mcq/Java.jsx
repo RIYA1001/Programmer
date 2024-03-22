@@ -88,7 +88,7 @@ const questions = [
   // Add more questions here...
 ];
 
-function Mcq() {
+function Java() {
   const [answers, setAnswers] = useState(new Array(questions.length).fill(""));
   const [score, setScore] = useState(0);
 
@@ -182,4 +182,4 @@ function Mcq() {
   );
 }
 
-export default Mcq;
+export default Java;
