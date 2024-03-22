@@ -23,11 +23,11 @@ const Home = () => {
                     <Link to="/videos" className="hover:text-green-700 text-blue-600">Learn More</Link> <br /><br />
                 </section>
 
-                {/* Games Section */}
+                {/* Mcq Section */}
                 <section className="my-3 mx-5 bg-yellow-400 text-gray-900 p-6 rounded-lg shadow-md">
-                    <h2 className="text-xl font-bold">Games</h2>
+                    <h2 className="text-xl font-bold">Mcq</h2>
                     <p className="my-4">Play interactive and educational games to reinforce programming concepts.</p>
-                    <Link to="/games" className="hover:text-green-700 text-blue-600">Learn More</Link> <br /><br />
+                    <Link to="/mcq" className="hover:text-green-700 text-blue-600">Learn More</Link> <br /><br />
                 </section>
 
                 {/* Notes Section */}

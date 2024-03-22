@@ -24,7 +24,7 @@ const Games = () => {
 
       <div className="text-center grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-7 2xl:grid-cols-11">
 
-        <Link to="/mcq" className="text-gray-900 font-bold m-4 rounded mb-3">
+        <Link to="/Java" className="text-gray-900 font-bold m-4 rounded mb-3">
           <section className="bg-yellow-400 hover:bg-gray-900 hover:text-yellow-400 p-6 rounded-lg shadow-md">
             <img className="mx-auto mb-5 h-20 w-auto" src='src\assets\icon\java.png' alt='Java' />
             Java
